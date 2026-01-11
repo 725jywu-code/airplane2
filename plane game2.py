@@ -31,3 +31,20 @@ class PlaneGame:
 
         self.bomb_available = 1
         self.steps_per_bomb = 5
+
+                self.top_frame = tk.Frame(root, pady=10)
+        self.top_frame.pack(side=tk.TOP, fill=tk.X)
+        
+        self.lbl_steps = tk.Label(self.top_frame, text="步數: 0", font=("Arial", 12))
+        self.lbl_steps.pack(side=tk.LEFT, padx=20)
+        
+        self.lbl_heads = tk.Label(self.top_frame, text="剩餘機頭: 0",
+                                  font=("Arial", 12, "bold"), fg="red")
+        self.lbl_heads.pack(side=tk.LEFT, padx=20)
+        
+        self.btn_restart = tk.Button(self.top_frame, text="重新開始", command=self.ask_start_game)
+        self.btn_restart.pack(side=tk.RIGHT, padx=20)
+
+        self.btn_bomb = tk.Button(self.top_frame, text="使用炸彈 (1)", command=self.use_bomb)
+        self.btn_bomb.pack(side=tk.RIGHT, padx=20)
+
